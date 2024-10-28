@@ -17,6 +17,8 @@ Teams compete in various events, including acceleration, hill climbs, and a grue
 
 [**Official Rulebook**](BAJA_RULES_2024_Rev_A_2023-08-31.pdf)  
 
+</details>
+
 ## Scope
 This documentation provides an overview of the Electronics and Controls systems implemented in our Baja SAE vehicle, in accordance with relevant sections of the Baja SAE 2024 rulebook. The systems described here prioritize safety, reliability, and regulatory compliance, ensuring that all electronic and control functionalities meet competition standards. Our scope specifically includes the following components:
 

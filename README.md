@@ -20,22 +20,23 @@ Teams compete in various events, including acceleration, hill climbs, and a grue
 </details>
 
 ## Scope
-This documentation provides an overview of the Electronics and Controls systems implemented in our Baja SAE vehicle, in accordance with relevant sections of the Baja SAE 2024 rulebook. The systems described here prioritize safety, reliability, and regulatory compliance, ensuring that all electronic and control functionalities meet competition standards. Our scope specifically includes the following components:
 
-### Electrical System (B.10):
-The vehicle includes a minimum electrical setup as required by rule B.10, encompassing dual engine kill switches, a brake light, and a main battery for system power. All safety and signaling systems are designed to function independently of the kill switches to maintain continuous operation during vehicle shutdowns.
+This documentation provides an overview of the **Electronics and Controls** systems implemented in our Baja SAE vehicle, in accordance with relevant sections of the Baja SAE 2024 rulebook. The systems described here prioritize safety, reliability, and regulatory compliance, ensuring that all electronic and control functionalities meet competition standards. Our scope specifically includes the following components:
 
-### Battery Requirements (B.10.1.1):
-We selected and mounted a factory-sealed, maintenance-free battery that remains securely fixed during normal operation and under collision forces, as specified in B.10.1.1.1. For systems powered by this battery, we conducted capacity assessments to confirm reliable performance throughout the event, fulfilling rule B.10.1.1.3.
+- **Electrical System** (B.10): The vehicle includes a minimum electrical setup as required by rule B.10, encompassing dual engine kill switches, a brake light, and a main battery for system power. All safety and signaling systems are designed to function independently of the kill switches to maintain continuous operation during vehicle shutdowns.
 
-### Wiring and Connectors (B.10.2):
-All wiring is routed to avoid high-temperature or high-wear areas, supporting accessibility and maintaining safety per B.10.2. Wiring pathways are designed to prevent interference with driver egress and other critical components.
+- **Battery Requirements** (B.10.1.1):
+  - **Mounting and Sealing**: We selected and mounted a factory-sealed, maintenance-free battery that remains securely fixed during normal operation and under collision forces, as specified in B.10.1.1.1.
+  - **Capacity**: For systems powered by this battery, we conducted capacity assessments to confirm reliable performance throughout the event, fulfilling rule B.10.1.1.3.
 
-### Kill Switches (B.10.3):
-In compliance with B.10.3, the vehicle has two kill switches for engine cutoff—one within the driver’s reach in the cockpit and an external one accessible for track workers. Both are firmly mounted and ensure instant engine shutdown during emergency stops.
+- **Wiring and Connectors** (B.10.2): All wiring is routed to avoid high-temperature or high-wear areas, supporting accessibility and maintaining safety per B.10.2. Wiring pathways are designed to prevent interference with driver egress and other critical components.
 
-### Signaling Devices (B.10.4):
-Brake Light: The vehicle uses an approved brake light positioned for visibility to trailing drivers, activated exclusively by a hydraulic pressure switch on the brake system, as outlined in rule B.10.4.1.
+- **Kill Switches** (B.10.3): In compliance with B.10.3, the vehicle has two kill switches for engine cutoff—one within the driver’s reach in the cockpit and an external one accessible for track workers. Both are firmly mounted and ensure instant engine shutdown during emergency stops.
 
-### Data Acquisition (B.10.6): 
-The vehicle is equipped with optional data acquisition systems to log performance metrics. These systems do not relay real-time feedback to the driver, and all associated costs are included in the official competition cost report.
+- **Signaling Devices** (B.10.4):
+  - **Brake Light**: The vehicle uses an approved brake light positioned for visibility to trailing drivers, activated exclusively by a hydraulic pressure switch on the brake system, as outlined in rule B.10.4.1.
+
+- **Data Acquisition** (B.10.6): The vehicle is equipped with optional data acquisition systems to log performance metrics. These systems do not relay real-time feedback to the driver, and all associated costs are included in the official competition cost report.
+
+This document will evolve as we continue refining the Electronics and Controls subsystems to ensure both safety and competitive performance within Baja SAE specifications.
+

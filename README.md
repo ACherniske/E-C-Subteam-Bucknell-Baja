@@ -14,3 +14,5 @@ Baja SAE is a globally recognized engineering competition hosted by SAE Internat
 The Baja SAE competition emphasizes practical engineering skills, teamwork, and project management as students navigate the real-world challenges of designing, manufacturing, and testing a functional, durable vehicle. Participants engage in all stages of vehicle development, from concept to fabrication, while adhering to competition guidelines and safety requirements.
 
 Teams compete in various events, including acceleration, hill climbs, and a grueling endurance race that tests the vehicle’s reliability over long distances. The competition allows engineering students to apply and expand their knowledge in areas like mechanical design, electronics, and control systems—developing crucial skills for their future careers.
+
+[**Official Rulebook**](files/BAJA_RULES_2024_Rev_A_2023-08-31.pdf)  

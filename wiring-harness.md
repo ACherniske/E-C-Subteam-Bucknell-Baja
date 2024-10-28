@@ -20,7 +20,7 @@ In addition to the braking system, the Main circuit also controls the front diff
 
 - **SW5**: This switch allows the driver to engage or disengage power to the front wheels as needed, improving maneuverability and traction in various driving conditions. By effectively managing the engagement of the front differential, the driver can optimize vehicle performance across different terrains, ensuring better handling and stability during competitive events.
 
-In summary, the wiring harness plays a critical role in integrating these essential circuits, promoting both safety and functionality in the Baja SAE vehicle's design. This documentation will continue to evolve as we refine the Electronics and Controls subsystems to ensure compliance with Baja SAE specifications while enhancing overall performance.
+The wiring harness plays a critical role in integrating these essential circuits, promoting both safety and functionality in the Baja SAE vehicle's design. This documentation will continue to evolve as we refine the Electronics and Controls subsystems to ensure compliance with Baja SAE specifications while enhancing overall performance.
 
 
 ------------------------------------------------------------------

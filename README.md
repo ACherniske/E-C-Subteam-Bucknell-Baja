@@ -1,6 +1,8 @@
 [![KiCad](https://img.shields.io/badge/Program-KiCad-blue?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAWCAYAAAArdgcFAAAAAXNSR0IArs4c6QAAAYBJREFUSEu1leFRAkEMhd+rQK1AOhArECtQKlAr0A6UDujAswKlAqUCsQPpgA7iPGZzEzJ7N3CD+2vvcnybfUkeNDPD/6wZjwRfA2gAbAA8ATgH0MJ/SiDe4SpdaFm5oH8zJfmhuJmNAXxH+ILkrf/YzCYAPgNsTXIU4WamTO/KuzOSynq7zEz7ucuyJCmgB18APAfYA0nBPD4H8FiLm5mSfI+Z98HfSN4HsPavFYkkmzK+KbFW8y64ajHxKxc9vwCc7NFgvXBVXeBV0fEUgPbqhLymqSFUr174yjugwJVx7iA/5Jqk4l4TzU4dntMys1zA/MkweOjbPpmHwfeQRJ/sDzezEcnfoKGKqeeuLjkIriHakJTWXqQ8tVGmg+Ga0EtvxSJPV2EHweV24+Qb6vWLVN1BcDGyqcnAdEDUfzBcB7SWWuTJ/tILz9m5s/ntd7ynHBAtN9dmZ0IX5aoOU+tFS9X7WWWK5D9abVeVZ92sOdbfXG16t97SGk7ffA+INX+jAkjEyroq/QAAAABJRU5ErkJggg==)](https://www.kicad.org/)
 [![Arduino](https://img.shields.io/badge/Platform-Arduino-96D9D9?logo=arduino)](https://arduino.cc/)
 [![Adafruit](https://img.shields.io/badge/Hardware-Adafruit-darkgray?logo=adafruit)](https://www.adafruit.com/)
+![Work in Progress](https://img.shields.io/badge/status-Work_in_Progress-yellow?style=flat-square)
+
 # E&C Subteam Documentation Bucknell Baja Car
 Wiring Harness, Controls, and Data Aquisition work for Bucknell Baja Electronics and Controls Subteam
 

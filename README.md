@@ -46,6 +46,10 @@ This document will evolve as we continue refining the Electronics and Controls s
 
 - [Wiring Harness](wiring-harness.md)
 
+##Future Updates
+
+- Data Aquisition Breakout for Arduino Mega
+
 <!-- Add additional subpages below as needed -->
 <!-- - [Another Subpage](another-subpage.md) -->
 

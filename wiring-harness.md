@@ -12,3 +12,8 @@ The Brake circuit incorporates brake sensors that detect when the driver applies
 
 The wiring harness is essential for integrating these systems, ensuring both functionality and safety in the Baja SAE car's design. This document will evolve as we continue refining the Electronics and Controls subsystems to ensure compliance with Baja SAE specifications while enhancing safety and performance.
 
+<div align=center>
+  <img src="/images/BucknellBaja-Wiring Harness.jpg" width="700" alt="IMG1"/>
+  <br>
+  Circuit Diagram of Wiring Harness
+</div>

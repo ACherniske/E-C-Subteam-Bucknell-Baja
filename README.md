@@ -42,3 +42,11 @@ This documentation provides an overview of the **Electronics and Controls** syst
 
 This document will evolve as we continue refining the Electronics and Controls subsystems to ensure both safety and competitive performance within Baja SAE specifications.
 
+## Project Subpages
+
+- [Wiring Harness](wiring-harness.md)
+
+<!-- Add additional subpages below as needed -->
+<!-- - [Another Subpage](another-subpage.md) -->
+
+

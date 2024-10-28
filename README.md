@@ -15,4 +15,4 @@ The Baja SAE competition emphasizes practical engineering skills, teamwork, and 
 
 Teams compete in various events, including acceleration, hill climbs, and a grueling endurance race that tests the vehicle’s reliability over long distances. The competition allows engineering students to apply and expand their knowledge in areas like mechanical design, electronics, and control systems—developing crucial skills for their future careers.
 
-[**Official Rulebook**](E-C-Subteam-Bucknell-Baja/BAJA_RULES_2024_Rev_A_2023-08-31.pdf)  
+[**Official Rulebook**](BAJA_RULES_2024_Rev_A_2023-08-31.pdf)  

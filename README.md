@@ -44,7 +44,7 @@ This document will evolve as we continue refining the Electronics and Controls s
 
 ## Project Subpages
 
-- [Wiring Harness](wiring-harness.md)
+- [Wiring Harness](W-H.md)
 
 ## Future Updates
 

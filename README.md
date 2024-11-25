@@ -45,10 +45,11 @@ This document will evolve as we continue refining the Electronics and Controls s
 ## Project Subpages
 
 - [Wiring Harness](W-H.md)
+- [Data Aquisition](DAQ.md)
 
 ## Future Updates
-
-- Data Aquisition Breakout for Arduino Mega
+Front and Rear Diff Wiring
+DAQ Breakout Board
 
 <!-- Add additional subpages below as needed -->
 <!-- - [Another Subpage](another-subpage.md) -->

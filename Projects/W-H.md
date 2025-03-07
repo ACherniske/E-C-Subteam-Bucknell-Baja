@@ -26,7 +26,7 @@ The wiring harness plays a critical role in integrating these essential circuits
 ------------------------------------------------------------------
 
 <div align=center>
-  <img src="/images/Wiring Harness.jpg" width="700" alt="IMG1"/>
+  <img src="/images/DAQSchematic.jpg" width="700" alt="IMG1"/>
   <br>
-  Circuit Diagram of Wiring Harness
+  Wiring Harness Schematic in Upper Left
 </div>

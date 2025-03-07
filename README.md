@@ -48,8 +48,8 @@ This document will evolve as we continue refining the Electronics and Controls s
 - [Data Aquisition](DAQ.md)
 
 ## Future Updates
-Front and Rear Diff Wiring
-DAQ Breakout Board
+-Front and Rear Diff Wiring (in testing)
+-DAQ Breakout Board (delayed)
 
 <!-- Add additional subpages below as needed -->
 <!-- - [Another Subpage](another-subpage.md) -->

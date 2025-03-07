@@ -25,6 +25,7 @@ The wiring harness plays a critical role in integrating these essential circuits
 ## Update on Differentials
 
 We have decided to replace the old diff with a new system. The one purchased has very little documentation and therefore we have to figure out the best way to actuate the diff. It has 3 positions (disengaged, engaged, and locked) which we will have to control with a switch in some way. More updates to come.
+
 ------------------------------------------------------------------
 
 <div align=center>

@@ -18,6 +18,15 @@ struct SensorData {
   unsigned long lastTime;
 };
 
+// Docstring Outline
+/**
+ * Summary:
+ * @param: 
+ * Output (if there is one, doesnt seem to be many)
+ */
+
+
+
 // Declare SensorData for two sensors
 SensorData HESensor1 = {0, 0, 0, 0};
 SensorData HESensor2 = {0, 0, 0, 0};
@@ -306,11 +315,19 @@ void recordData() {
       }
   }
 
+/**
+ * 
+ * @param: int interruptPin
+ *        void *isr (Pointer to location where interupt occured)
+ */
 void initializeSensor(int interruptPin, void (*isr)()) {
   attachInterrupt(digitalPinToInterrupt(interruptPin), isr, RISING);
 }
 
-// Update the RPM for a given sensor
+/**
+ * Update the RPM for a given sensor
+ * @param: obj SensorDatapassed by reference to sensorData
+ */
 void updateRPM(SensorData &sensorData) {
   unsigned long currentTime = millis();
   unsigned long timeDiff = currentTime - sensorData.lastTime;
@@ -322,7 +339,10 @@ void updateRPM(SensorData &sensorData) {
   }
 }
 
-// Interrupt Service Routine for axle sensor
+/**
+ * Interrupt Service Routine for axle sensor
+ * 
+ */
 void HESensor1Detect() {
   HESensor1.half_revolutions++;
   if (HESensor1.half_revolutions % 2 == 0) {
@@ -330,7 +350,10 @@ void HESensor1Detect() {
   }
 }
 
-// Interrupt Service Routine for CVT sensor
+/**
+ * Interrupt Service Routine for CVT sensor
+ * 
+ */
 void HESensor2Detect() {
   HESensor2.half_revolutions++;
   if (HESensor2.half_revolutions % 2 == 0) {

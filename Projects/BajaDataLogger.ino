@@ -229,9 +229,9 @@ void loop() {
         dso32.getEvent(&accel, &gyro, &temp); // Accel/Gyro
 
         float ambientTempF = mlx.readAmbientTempF();
-        float ambientTempC = mlx.readAmbientTempC();
+        // float ambientTempC = mlx.readAmbientTempC(); <-- For Celsius collection
         float objectTempF = mlx.readObjectTempF();
-        float objectTempC = mlx.readObjectTempC();
+        // float objectTempC = mlx.readObjectTempC();
 
         if (dataFile) {
             char currentTime[10];
@@ -288,7 +288,12 @@ void loop() {
             Serial.println(HESensor1.rpm);
         
             Serial.println("====================================================\n");
-
+            // Delay
+            int count = 100;
+            int c = 0;
+            while (c < count) {
+              c += 1;
+            }
         } else {
             Serial.println("File not open, stopping recording!");
             isRecording = false;

@@ -289,11 +289,7 @@ void loop() {
         
             Serial.println("====================================================\n");
             // Delay
-            int count = 100;
-            int c = 0;
-            while (c < count) {
-              c += 1;
-            }
+            delay(100);
         } else {
             Serial.println("File not open, stopping recording!");
             isRecording = false;

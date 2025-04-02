@@ -57,8 +57,8 @@ void setup(){
   
   // Pin Definitions 
   pinMode(22, INPUT_PULLUP); // Button
-  pinMode(23, OUTPUT); // SD Activity Light
-  digitalWrite(23, LOW);
+  pinMode(43, OUTPUT); // SD Activity Light
+  digitalWrite(43, LOW);
   initializeSensor(2, HESensor1Detect);
   initializeSensor(3, HESensor2Detect);
   
@@ -87,7 +87,7 @@ void setup(){
     while (1);
     }
     
-    if (!dso32.begin_I2C()) { //Accel
+    if (!dso32.begin_I2C(0x6B)) { //Accel
     Serial.println("Error connecting to DSO32 sensor. Check wiring.");
     while (1) {
       delay(10);
@@ -187,13 +187,16 @@ void loop() {
   if (isRecording) {
     recordData();           // Record data if the system is in recording mode
   }  
+  else{
+    Serial.println("Waiting");
+  }
 }
 
 // Functions
 
 //System
 bool isButtonPressed() {
-  return digitalRead(22) == LOW; // Button pressed when pin reads LOW
+  return digitalRead(7) == LOW; // Button pressed when pin reads LOW
 }
 
 void waitForSDCard() {
@@ -201,7 +204,7 @@ void waitForSDCard() {
       Serial.println("Waiting for SD card...");
       delay(1000);
       isRecording = false;
-      digitalWrite(23, LOW);  // Turn off the LED
+      digitalWrite(43, LOW);  // Turn off the LED
   }
 }
 
@@ -217,7 +220,7 @@ void waitForButtonPress() {
               snprintf(filename, sizeof(filename), "%02d%02d%02d%02d.csv",
               now.month(), now.day(), now.hour(), now.minute());
             dataFile = SD.open(filename, FILE_WRITE); // Open the file for writing
-            digitalWrite(23, HIGH);  // Turn on the LED
+            digitalWrite(43, HIGH);  // Turn on the LED
             if (dataFile) {
                 Serial.println("Recording started!");
                 isRecording = true;
@@ -227,7 +230,7 @@ void waitForButtonPress() {
             }
         } else {
             Serial.println("Recording stopped!");
-            digitalWrite(23, LOW);  // Turn off the LED
+            digitalWrite(43, LOW);  // Turn off the LED
             if (dataFile) {
                 dataFile.close(); // Close the file
             }

@@ -29,8 +29,8 @@ pinA.pull = digitalio.Pull.DOWN
 pinB.pull = digitalio.Pull.DOWN
 pinD.pull = digitalio.Pull.DOWN
 
-out1 = digitalio.DigitalInOut(board.A0) # Voltage Output 1
-out2 = digitalio.DigitalInOut(board.A1) # Voltage Output 2
+out1 = digitalio.DigitalInOut(board.D6) # Voltage Output 1
+out2 = digitalio.DigitalInOut(board.D5) # Voltage Output 2
 
 # Configure Pins as Outputs
 out1.direction = digitalio.Direction.OUTPUT
@@ -145,4 +145,4 @@ while True:
     
     print(f"Last Gear: {last_Gear}, Target Gear: {target_Gear}, Current Gear: {curr_Gear}, Out1: {out1.value}, Out2: {out2.value}")
 
-    time.sleep(0.5)
+    time.sleep(0.1)

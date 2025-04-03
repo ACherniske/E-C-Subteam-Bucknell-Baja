@@ -15,9 +15,9 @@ pin13.direction = digitalio.Direction.INPUT
 pin12.pull = digitalio.Pull.DOWN
 pin13.pull = digitalio.Pull.DOWN
 
-pinA = digitalio.DigitalInOut(board.D5)
-pinB = digitalio.DigitalInOut(board.D6)
-pinD = digitalio.DigitalInOut(board.D7)
+pinA = digitalio.DigitalInOut(board.D11)
+pinB = digitalio.DigitalInOut(board.D10)
+pinD = digitalio.DigitalInOut(board.D9)
 
 # Configure Pins as Inputs
 pinA.direction = digitalio.Direction.INPUT
@@ -29,16 +29,19 @@ pinA.pull = digitalio.Pull.DOWN
 pinB.pull = digitalio.Pull.DOWN
 pinD.pull = digitalio.Pull.DOWN
 
-out1 = digitalio.DigitalInOut(board.D8) # Voltage Output 1
-out2 = digitalio.DigitalInOut(board.D9) # Voltage Output 2
+out1 = digitalio.DigitalInOut(board.A0) # Voltage Output 1
+out2 = digitalio.DigitalInOut(board.A1) # Voltage Output 2
 
 # Configure Pins as Outputs
 out1.direction = digitalio.Direction.OUTPUT
 out2.direction = digitalio.Direction.OUTPUT
 
+#out1.pull = digitalio.Pull.DOWN
+#out2.pull = digitalio.Pull.DOWN
+
 last_Gear = None
 target_Gear = None
-current_Gear = None
+curr_Gear = None
 
 def get_Switch(neutral_Pin, lock_Pin):
     """ Gets the position of the DPDT switch connected to the Feather M0
@@ -53,17 +56,17 @@ def get_Switch(neutral_Pin, lock_Pin):
             2: Drive
             4: Lock
     """
-  neutral_Value = neutral_Pin.value
-  lock_Value = lock_Pin.value
+    neutral_Value = neutral_Pin.value
+    lock_Value = lock_Pin.value
 
   # print(f"Pin 12: {neutral_Value}, Pin 13: {lock_Value}") Commented out for Implementation
 
-  if neutral_Value == True and lock_Value == False:
-    return 4 # Diff Lock
-  elif neutral_Value == False and lock_Value == True:
-    return 0 # Diff Neutral
-  else:
-    return 2 # Diff Drive
+    if neutral_Value == True and lock_Value == False:
+        return 4 # Diff Lock
+    elif neutral_Value == False and lock_Value == True:
+        return 0 # Diff Neutral
+    else:
+        return 2 # Diff Drive
 
 def current_Gear(PinA, PinB, PinD):
     """ Determines the current gear of the diff based on the state of 3 input pins
@@ -85,7 +88,7 @@ def current_Gear(PinA, PinB, PinD):
         return 0
     elif PinA.value and PinB.value:
         return 1
-    elif PinB.value and not (PinA.value or PinD.value):
+    elif PinB.value and not pinA.value and not PinD.value:
         return 2
     elif PinB.value and PinD.value:
         return 3
@@ -94,7 +97,7 @@ def current_Gear(PinA, PinB, PinD):
     else:
         return None
 
-def move_Motor(last_Gear, taget_Gear, current_Gear,PinA, PinB, PinD, neutral_Pin, lock_Pin, Out1, Out2):
+def move_Motor(last_Gear, taget_Gear, curr_Gear,PinA, PinB, PinD, neutral_Pin, lock_Pin, Out1, Out2):
     """ Moves the motor to the position selected by the user
 
     Args:
@@ -110,31 +113,36 @@ def move_Motor(last_Gear, taget_Gear, current_Gear,PinA, PinB, PinD, neutral_Pin
         Out2 (bool): Output toggle for voltage to motor
     """
     target_Gear = get_Switch(neutral_Pin, lock_Pin)
-    current_Gear = current_Gear(PinA, PinB, PinD)
+    curr_Gear = current_Gear(PinA, PinB, PinD)
 
     if taget_Gear == last_Gear:
-        Out1 = 0
-        Out2 = 0
+        out1.value = False
+        out2.value = False
     else:
-        if current_Gear != target_Gear and current_Gear is not None:
-            if taget_Gear < current_Gear:
-                Out1.value = True
-                Out2.value = False
-            elif target_Gear > current_Gear:
-                Out1.value = False
-                Out2.value = True
+        if curr_Gear != target_Gear and curr_Gear is not None:
+            if taget_Gear < curr_Gear:
+                out1.value = True
+                out2.value = False
+            elif target_Gear > curr_Gear:
+                out1.value = False
+                out2.value = True
+        elif curr_Gear == None:
+            out1.value = True
+            out2.value = False
         else:
             last_Gear = target_Gear
     return last_Gear, target_Gear
 
 while True:
+
     target_Gear = get_Switch(pin12, pin13)
-    current_Gear = current_Gear(pinA, pinB, pinD)
+    curr_Gear = current_Gear(pinA, pinB, pinD)
 
     if last_Gear is None:
         last_Gear = target_Gear
 
-    last_Gear, target_Gear = move_Motor(last_Gear, target_Gear, current_Gear, pinA, pinB, pinD, pin12, pin13, out1, out2)
+    last_Gear, target_Gear = move_Motor(last_Gear, target_Gear, curr_Gear, pinA, pinB, pinD, pin12, pin13, out1, out2)
+    
+    print(f"Last Gear: {last_Gear}, Target Gear: {target_Gear}, Current Gear: {curr_Gear}, Out1: {out1.value}, Out2: {out2.value}")
 
-    print(f"Last Gear: {last_Gear}, Target Gear: {target_Gear}, Current Gear: {current_Gear}")
     time.sleep(0.5)

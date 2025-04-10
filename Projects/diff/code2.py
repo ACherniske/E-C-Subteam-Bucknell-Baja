@@ -115,7 +115,7 @@ def move_Motor(last_Gear, taget_Gear, curr_Gear,PinA, PinB, PinD, neutral_Pin, l
     target_Gear = get_Switch(neutral_Pin, lock_Pin)
     curr_Gear = current_Gear(PinA, PinB, PinD)
 
-    if curr_Gear == last_Gear:
+    if taget_Gear == last_Gear:
         out1.value = False
         out2.value = False
     else:
@@ -130,7 +130,7 @@ def move_Motor(last_Gear, taget_Gear, curr_Gear,PinA, PinB, PinD, neutral_Pin, l
             out1.value = True
             out2.value = False
         else:
-            last_Gear = curr_Gear
+            last_Gear = target_Gear
     return last_Gear, target_Gear
 
 while True:
@@ -139,7 +139,7 @@ while True:
     curr_Gear = current_Gear(pinA, pinB, pinD)
 
     if last_Gear is None:
-        last_Gear = curr_Gear
+        last_Gear = target_Gear
 
     last_Gear, target_Gear = move_Motor(last_Gear, target_Gear, curr_Gear, pinA, pinB, pinD, pin12, pin13, out1, out2)
     

@@ -1,5 +1,3 @@
-#Testing code
-
 import board
 import time
 import digitalio
@@ -39,7 +37,6 @@ out2.direction = digitalio.Direction.OUTPUT
 #out1.pull = digitalio.Pull.DOWN
 #out2.pull = digitalio.Pull.DOWN
 
-last_Gear = None
 target_Gear = None
 curr_Gear = None
 
@@ -97,11 +94,10 @@ def current_Gear(PinA, PinB, PinD):
     else:
         return None
 
-def move_Motor(last_Gear, taget_Gear, curr_Gear,PinA, PinB, PinD, neutral_Pin, lock_Pin, Out1, Out2):
+def move_Motor(taget_Gear, curr_Gear,PinA, PinB, PinD, neutral_Pin, lock_Pin, Out1, Out2):
     """ Moves the motor to the position selected by the user
 
     Args:
-        last_Gear (int): State of last_Gear (0,2,4)
         taget_Gear (int): State of target_Gear determined by switch (0,2,4)
         current_Gear (int): Current position of gear (0-4)
         PinA (bool): State of Pin A for current_Gear
@@ -115,7 +111,7 @@ def move_Motor(last_Gear, taget_Gear, curr_Gear,PinA, PinB, PinD, neutral_Pin, l
     target_Gear = get_Switch(neutral_Pin, lock_Pin)
     curr_Gear = current_Gear(PinA, PinB, PinD)
 
-    if taget_Gear == last_Gear:
+    if curr_Gear == target_Gear:
         out1.value = False
         out2.value = False
     else:
@@ -129,20 +125,15 @@ def move_Motor(last_Gear, taget_Gear, curr_Gear,PinA, PinB, PinD, neutral_Pin, l
         elif curr_Gear == None:
             out1.value = True
             out2.value = False
-        else:
-            last_Gear = target_Gear
-    return last_Gear, target_Gear
+    return target_Gear
 
 while True:
 
     target_Gear = get_Switch(pin12, pin13)
     curr_Gear = current_Gear(pinA, pinB, pinD)
 
-    if last_Gear is None:
-        last_Gear = target_Gear
-
-    last_Gear, target_Gear = move_Motor(last_Gear, target_Gear, curr_Gear, pinA, pinB, pinD, pin12, pin13, out1, out2)
+    target_Gear = move_Motor(target_Gear, curr_Gear, pinA, pinB, pinD, pin12, pin13, out1, out2)
     
-    print(f"Last Gear: {last_Gear}, Target Gear: {target_Gear}, Current Gear: {curr_Gear}, Out1: {out1.value}, Out2: {out2.value}")
+    print(f"Target Gear: {target_Gear}, Current Gear: {curr_Gear}, Out1: {out1.value}, Out2: {out2.value}")
 
     time.sleep(0.1)

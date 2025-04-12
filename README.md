@@ -44,9 +44,9 @@ This document will evolve as we continue refining the Electronics and Controls s
 
 ## Project Subpages
 
-- [Wiring Harness](Projects\WiringHarness\WiringHarness.md)
-- [Data Logger](Projects\DataLogger\DataLogger.md)
-- [Differential](Projects\Differential\Differential.md)
+- [Wiring Harness](/Projects/WiringHarness/WiringHarness.md)
+- [Data Logger](/Projects/DataLogger/DataLogger.md)
+- [Differential](/Projects/Differential/Differential.md)
 
 ## Future Updates
 -Front and Rear Diff Wiring (in testing)

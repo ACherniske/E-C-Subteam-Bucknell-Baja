@@ -22,9 +22,8 @@ In addition to the braking system, the Main circuit also controls the front diff
 
 The wiring harness plays a critical role in integrating these essential circuits, promoting both safety and functionality in the Baja SAE vehicle's design. This documentation will continue to evolve as we refine the Electronics and Controls subsystems to ensure compliance with Baja SAE specifications while enhancing overall performance.
 
-## Update on Differentials
-
-We have decided to replace the old diff with a new system. The one purchased has very little documentation and therefore we have to figure out the best way to actuate the diff. It has 3 positions (disengaged, engaged, and locked) which we will have to control with a switch in some way. More updates to come.
+## Differential Update 4/11
+New information on the differentials can be found within [Differential](/Projects/Differential/Differential.md)
 
 ------------------------------------------------------------------
 

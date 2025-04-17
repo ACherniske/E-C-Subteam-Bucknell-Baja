@@ -17,6 +17,9 @@ pinA = digitalio.DigitalInOut(board.D11)
 pinB = digitalio.DigitalInOut(board.D10)
 pinD = digitalio.DigitalInOut(board.D9)
 
+pinVen = digitalio.DigitalInOut(board.D24) # Voltage Enable Pin for H-Bridge
+pinVen.direction = digitalio.Direction.OUTPUT
+
 # Configure Pins as Inputs
 pinA.direction = digitalio.Direction.INPUT
 pinB.direction = digitalio.Direction.INPUT
@@ -114,15 +117,19 @@ def move_Motor(taget_Gear, curr_Gear,PinA, PinB, PinD, neutral_Pin, lock_Pin, Ou
     if curr_Gear == target_Gear:
         out1.value = False
         out2.value = False
+        pinVen.value = False
     else:
         if curr_Gear != target_Gear and curr_Gear is not None:
             if taget_Gear < curr_Gear:
+                pinVen.value = True
                 out1.value = True
                 out2.value = False
             elif target_Gear > curr_Gear:
+                pinVen.value = True
                 out1.value = False
                 out2.value = True
         elif curr_Gear == None:
+            pinVen.value = True
             out1.value = True
             out2.value = False
     return target_Gear
